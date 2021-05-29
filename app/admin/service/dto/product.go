@@ -12,6 +12,13 @@ import (
 
 type ProductSearch struct {
 	dto.Pagination     `search:"-"`
+    DataId string `form:"dataId"  search:"type:exact;column:data_id;table:product" comment:"data_id"`
+    ShopId string `form:"shopId"  search:"type:exact;column:shop_id;table:product" comment:"4462"`
+    FullCid string `form:"fullCid"  search:"type:exact;column:full_cid;table:product" comment:""`
+    ParentId string `form:"parentId"  search:"type:exact;column:parent_id;table:product" comment:"4762270"`
+    ErrMsg string `form:"errMsg"  search:"type:exact;column:err_msg;table:product" comment:"null"`
+    ListingId string `form:"listingId"  search:"type:exact;column:listing_id;table:product" comment:"0324YYDEASD"`
+    ParentAsin string `form:"parentAsin"  search:"type:exact;column:parent_asin;table:product" comment:"null"`
     Title string `form:"title"  search:"type:exact;column:title;table:product" comment:"product title"`
     Brand string `form:"brand"  search:"type:exact;column:brand;table:product" comment:"null"`
     Manufacturer string `form:"manufacturer"  search:"type:exact;column:manufacturer;table:product" comment:"null"`
@@ -22,6 +29,14 @@ type ProductSearch struct {
     MainImage string `form:"mainImage"  search:"type:exact;column:main_image;table:product" comment:"https://m.media-amazon.com/images/I/613gR7poDQL._SL75_.jpg"`
     SaleStartDate string `form:"saleStartDate"  search:"type:exact;column:sale_start_date;table:product" comment:"null"`
     SaleEndDate string `form:"saleEndDate"  search:"type:exact;column:sale_end_date;table:product" comment:"null"`
+    SaleSalePrice string `form:"saleSalePrice"  search:"type:exact;column:sale_sale_price;table:product" comment:"null"`
+    Quantity string `form:"quantity"  search:"type:exact;column:quantity;table:product" comment:"0"`
+    OpenDate string `form:"openDate"  search:"type:exact;column:open_date;table:product" comment:"2021-03-23 19:09:08"`
+    PackageDimensions string `form:"packageDimensions"  search:"type:exact;column:package_dimensions;table:product" comment:"null"`
+    ReservedQty string `form:"reservedQty"  search:"type:exact;column:reserved_qty;table:product" comment:"17"`
+    PurchaseCost string `form:"purchaseCost"  search:"type:exact;column:purchase_cost;table:product" comment:"0"`
+    HeadTripCost string `form:"headTripCost"  search:"type:exact;column:head_trip_cost;table:product" comment:"0"`
+    ShipCost string `form:"shipCost"  search:"type:exact;column:ship_cost;table:product" comment:"null"`
 }
 
 func (m *ProductSearch) GetNeedSearch() interface{} {

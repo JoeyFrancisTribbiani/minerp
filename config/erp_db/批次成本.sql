@@ -1,45 +1,49 @@
-CREATE TABLE `rows`(
+CREATE TABLE `erp_finance_lot_cost`(
+    id int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `created_at` timestamp NULL DEFAULT NULL,
+    `updated_at` timestamp NULL DEFAULT NULL,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    `create_by` int(11) unsigned DEFAULT NULL,
+    `update_by` int(11) unsigned DEFAULT NULL,
     rows_id bigint(100) NOT NULL AUTO_INCREMENT COMMENT 'rows_id',
-    shop_id varchar(100) NULL COMMENT 'null',
+    shop_id varchar(100) NULL COMMENT '店铺id',
     page_id bigint(100) NULL COMMENT 'page_id',
     region_shop_id bigint(11) NULL COMMENT '387',
-    shop_name varchar(100) NULL COMMENT 'null',
-    marketplace_id varchar(100) NULL COMMENT 'null',
-    marketplace varchar(100) NULL COMMENT 'null',
-    marketplace_name varchar(100) NULL COMMENT 'null',
-    sku varchar(100) NULL COMMENT 'SDSKU-5003474',
-    fnsku varchar(100) NULL COMMENT 'SDSKU-6459857',
-    attr bigint(11) NULL COMMENT '1',
-    attr_name varchar(100) NULL COMMENT '月初库存',
-    sellable bigint(11) NULL COMMENT '1',
-    sellable_name varchar(100) NULL COMMENT '可售库存',
-    quantity bigint(11) NULL COMMENT '10',
-    document_number varchar(100) NULL COMMENT 'null',
-    fba_shipment_id varchar(100) NULL COMMENT 'null',
-    batch varchar(100) NULL COMMENT '初始化库存',
-    invoice varchar(100) NULL COMMENT 'null',
-    inventory_cost bigint(11) NULL COMMENT '491',
-    transport_cost Double NULL COMMENT '253.8',
-    currency varchar(100) NULL COMMENT 'CNY',
-    received_date varchar(100) NULL COMMENT '2021-05-01',
-    cost_type bigint(11) NULL COMMENT '1',
-    PRIMARY KEY (`rows_id`) USING BTREE,
-    KEY `page_id` (`page_id`),
-    CONSTRAINT `rows_fk_page_id` FOREIGN KEY (`page_id`) REFERENCES `page` (`page_id`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='rows';
-CREATE TABLE `statistics`(
-    statistics_id bigint(100) NOT NULL AUTO_INCREMENT COMMENT 'statistics_id',
-    quantity bigint(11) NULL COMMENT '122',
-    data_id bigint(100) NULL COMMENT 'data_id',
-    inventory_cost Double NULL COMMENT '5990.2',
-    transport_cost Double NULL COMMENT '3096.36',
-    currency varchar(100) NULL COMMENT 'CNY',
-    PRIMARY KEY (`statistics_id`) USING BTREE,
-    KEY `data_id` (`data_id`),
-    CONSTRAINT `statistics_fk_data_id` FOREIGN KEY (`data_id`) REFERENCES `data` (`data_id`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='statistics';
+    shop_name varchar(100) NULL COMMENT '店铺名称',
+    marketplace_id varchar(100) NULL COMMENT '市场id',
+    marketplace_name varchar(100) NULL COMMENT '市场名称',
+    sku varchar(100) NULL COMMENT 'SKU',
+    fnsku varchar(100) NULL COMMENT 'MSKU',
+    attr bigint(11) NULL COMMENT '类型id',
+    attr_name varchar(100) NULL COMMENT '类型名称',
+    sellable bigint(11) NULL COMMENT '是否可售id',
+    sellable_name varchar(100) NULL COMMENT '库存属性',
+    quantity bigint(11) NULL COMMENT '数量',
+    document_number varchar(100) NULL COMMENT '单据号',
+    fba_shipment_id varchar(100) NULL COMMENT '货件批次',
+    batch_purchase_pc_fee varchar(100) NULL COMMENT '批次采购成本',
+    invoice varchar(100) NULL COMMENT '发货单',
+    inventory_cost bigint(11) NULL COMMENT '库存成本',
+    transport_cost Double NULL COMMENT '头程费用',
+    currency varchar(100) NULL COMMENT '币种',
+    received_date varchar(100) NULL COMMENT '时间',
+    cost_type bigint(11) NULL COMMENT '成本类型',
+    PRIMARY KEY (`id`) USING BTREE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='批次成本';
 
-
+CREATE TABLE `erp_finance_lot_cost_summary`(
+    id int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `created_at` timestamp NULL DEFAULT NULL,
+    `updated_at` timestamp NULL DEFAULT NULL,
+    `deleted_at` timestamp NULL DEFAULT NULL,
+    `create_by` int(11) unsigned DEFAULT NULL,
+    `update_by` int(11) unsigned DEFAULT NULL,
+    quantity bigint(11) NULL COMMENT '数量合计',
+    inventory_cost Double NULL COMMENT '库存成本合计',
+    transport_cost Double NULL COMMENT '头程费用合计',
+    currency varchar(100) NULL COMMENT '币种',
+    PRIMARY KEY (`id`) USING BTREE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='批次成本合计';
 -- Request URL: https://demo.sellfox.com/api/batchCost/pageList.json?pageNo=1&pageSize=20&orderBy=receivedDate&desc=false&regionId=142&shopIds=1860,387,1861,1859,1862&sids=&sellable=&startDate=2021-04-30&endDate=2021-05-29&attrs=&searchType=sku&searchContent=
 -- pageNo: 1
 -- pageSize: 20

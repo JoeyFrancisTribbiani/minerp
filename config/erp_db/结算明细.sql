@@ -1,4 +1,4 @@
-CREATE TABLE `erp_transaction_detail`(
+CREATE TABLE `erp_finance_transaction`(
     id int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
     `created_at` timestamp NULL DEFAULT NULL,
     `updated_at` timestamp NULL DEFAULT NULL,

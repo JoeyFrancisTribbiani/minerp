@@ -5,7 +5,7 @@ CREATE TABLE `erp_finance_summary`(
     `deleted_at` timestamp NULL DEFAULT NULL,
     `create_by` int(11) unsigned DEFAULT NULL,
     `update_by` int(11) unsigned DEFAULT NULL,
-    month varchar(100) NULL COMMENT 'null',
+    month varchar(100) NULL COMMENT '月份',
     shop_id varchar(100) NULL COMMENT '店铺id',
     shop_name varchar(100) NULL COMMENT '店铺名称',
     marketplace_id varchar(100) NULL COMMENT '市场id',
@@ -43,7 +43,7 @@ CREATE TABLE `erp_finance_summary`(
     sum_shop_fba_storage_fee varchar(100) NULL COMMENT '店铺仓储费用',
     fba_storage_fee varchar(100) NULL COMMENT 'FBA月仓储费',
     fba_storage_fee_diff varchar(100) NULL COMMENT 'FBA月仓储费差',
-    fba_long_storage_fee varchar(100) NULL COMMENT '0.00',
+    fba_long_storage_fee varchar(100) NULL COMMENT 'FBA长期仓储费',
     sum_shop_fba_storage_other_fee varchar(100) NULL COMMENT '店铺其他仓储费用汇总',
     fba_adjustment_fee varchar(100) NULL COMMENT '库存调整费',
     fba_disposal_fee varchar(100) NULL COMMENT 'FBA销毁费',
@@ -165,22 +165,3 @@ CREATE TABLE `erp_finance_asin_fee_type`(
     type_name varchar(100) NULL COMMENT '类型名称',
     PRIMARY KEY (`id`) USING BTREE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='asin_fee_types';
-
-
--- 商品成本
-CREATE TABLE `data`(
-    data_id bigint(100) NOT NULL AUTO_INCREMENT COMMENT 'data_id',
-    id varchar(100) NULL COMMENT 'null',
-    root_id bigint(100) NULL COMMENT 'root_id',
-    code varchar(100) NULL COMMENT 'SUM_TAX',
-    title varchar(100) NULL COMMENT '税费',
-    sub_item varchar(100) NULL COMMENT 'null',
-    is_system bigint(11) NULL COMMENT '2',
-    profit_type bigint(11) NULL COMMENT '2',
-    is_active bigint(11) NULL COMMENT '1',
-    cost_type bigint(11) NULL COMMENT '0',
-    sort_num varchar(100) NULL COMMENT 'null',
-    PRIMARY KEY (`data_id`) USING BTREE,
-    KEY `root_id` (`root_id`),
-    CONSTRAINT `data_fk_root_id` FOREIGN KEY (`root_id`) REFERENCES `root` (`root_id`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='data';

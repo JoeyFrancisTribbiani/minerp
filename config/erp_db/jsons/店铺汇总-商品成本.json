@@ -1,0 +1,116 @@
+{
+    "code": 0,
+    "msg": "success",
+    "data": [
+     {
+      "id": null,
+      "code": "SUM_TAX",
+      "title": "税费",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 0,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "FIXED_DISPOSED_FEE",
+      "title": "销毁商品成本",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 1,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "FIXED_RETURN",
+      "title": "退货商品成本",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 1,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "FIXED_ADJ_COMPENSATION_PC_FEE",
+      "title": "库存赔偿商品成本",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 1,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "FIXED_MULTI_CHANNEL",
+      "title": "多渠道商品成本",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 1,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "FIXED_REISSUE",
+      "title": "补发商品成本",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 1,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "SUM_EVALUATION",
+      "title": "测评费",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 0,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "SUM_SHOP_OTHER_FEE",
+      "title": "店铺其他费",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 0,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "SUM_ASIN_OTHER_FEE",
+      "title": "ASIN其他费",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 0,
+      "sortNum": null
+     },
+     {
+      "id": null,
+      "code": "SUM_FIXED_FEE",
+      "title": "固定费用",
+      "subItem": null,
+      "isSystem": 2,
+      "profitType": 2,
+      "isActive": 1,
+      "costType": 0,
+      "sortNum": null
+     }
+    ]
+   }

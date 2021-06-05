@@ -1,0 +1,11 @@
+shop: 
+marketplace: 
+start: 2021-04-01
+end: 2021-04-30
+currency: USD
+type: 
+searchField: 
+searchValue: 
+pageSize: 20
+pageNo: 1
+pageType: transaction

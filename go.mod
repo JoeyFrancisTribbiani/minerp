@@ -3,11 +3,13 @@ module go-admin
 go 1.15
 
 require (
+	github.com/360EntSecGroup-Skylar/excelize v1.4.1
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
 	github.com/alibaba/sentinel-golang v0.6.1
 	github.com/aliyun/aliyun-oss-go-sdk v0.0.0-20190307165228-86c17b95fcd5
 	github.com/bytedance/go-tagexpr/v2 v2.7.10
 	github.com/casbin/casbin/v2 v2.25.1
+	github.com/dogenzaka/tsv v0.0.0-20150215104501-8e02e611b1fb
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-admin-team/go-admin-core v1.3.5-rc.1
 	github.com/go-admin-team/go-admin-core/sdk v1.3.5-rc.1
